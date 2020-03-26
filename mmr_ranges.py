@@ -77,7 +77,6 @@ class SC2API:
     def get_mmr_ranges(self, league: League, seasonId: int , server: Server) -> dict:
         queueId = 201 # LotV 1v1
         teamType = 0 # Arragend team
-        access_token = 'EUKDUtF7hwkXO73yHxURUZuy2BJSLiA8EX'
         payload = {'locale': 'en_US', 'access_token': self._access_token}
         url = f'https://{server.short()}.api.blizzard.com/data/sc2/league/{seasonId}/{queueId}/{teamType}/{league.value}'
         r = requests.get(url, params=payload)
