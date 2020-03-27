@@ -95,13 +95,13 @@ if __name__ == "__main__":
     year = season_data['year']
     number = season_data['number']
     url = 'https://develop.battle.net/documentation/starcraft-2/game-data-apis'
-    github_url = 'https://github.com/2press/sc2_mmr_ranges_liquipedia'
+    github_url = 'https://github.com/2press/SC2-MMR-Ranges-Liquipedia'
     title = 'StarCraft 2 Game Data API'
     servers = [Server.Europe, Server.America, Server.Korea]
     with open('liquipedia_ranges.txt', 'w') as o:
         today = date.today().strftime('%B %d, %Y')
         season = f'{year} Season {number}'
-        o.write('<!-- See python script at {github_url} to update the MMR ranges! -->\n')
+        o.write(f'<!-- See python script at {github_url} to update the MMR ranges! -->\n')
         o.write('{| class="wikitable" style="text-align:center;"\n')
         o.write(f'|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" ')
         o.write(f'| League MMR Ranges, 1v1 Ladder, {season}.<ref>{{{{cite web|url={url} |title={title} |accessdate={today}}}}}</ref>\n')
