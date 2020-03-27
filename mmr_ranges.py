@@ -125,7 +125,7 @@ if __name__ == "__main__":
             for tier in range(1, 4):
                 o.write('|-\n')
                 o.write(f'|{tier} || ')
-                if league == League.Master:
+                if league == League.Master and tier ==1:
                     o.write(' || '.join([f'{string[tier][0]} - {string[tier][1]}' for string in data]))
                 else:
                     o.write(' || '.join([f'{string[tier][0]}' for string in data]))
