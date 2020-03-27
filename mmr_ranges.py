@@ -94,6 +94,8 @@ if __name__ == "__main__":
     seasonId = season_data['seasonId']
     year = season_data['year']
     number = season_data['number']
+    url = 'https://develop.battle.net/documentation/starcraft-2/game-data-apis'
+    title = 'StarCraft 2 Game Data API'
     servers = [Server.Europe, Server.America, Server.Korea]
     with open('liquipedia_ranges.txt', 'w') as o:
         today = date.today().strftime('%B %d, %Y')
@@ -103,7 +105,8 @@ if __name__ == "__main__":
         o.write('! rowspan=2 colspan=3 style="width:100px"| League\n')
         o.write('! colspan=4 style="width:560px" |MMR Floor\n')
         o.write('|-\n')
-        o.write(f'|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" | League MMR Span, LotV 1v1 Ladder, {season}.<ref>{{{{cite web|url=https://develop.battle.net/documentation/api-reference/starcraft-2-game-data-api |title=StarCraft 2 Game Data API|accessdate={today}}}}}</ref>\n')
+        o.write(f'|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" ')
+        o.write(f'| League MMR Ranges, 1v1 Ladder, {season}.<ref>{{{{cite web|url={url} |title={title} |accessdate={today}}}}}</ref>\n')
         o.write('|-\n')
         for server in servers:
             o.write(f'! style="width:140px" |{server.short().upper()}\n')
