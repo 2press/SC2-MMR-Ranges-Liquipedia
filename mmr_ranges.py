@@ -95,29 +95,34 @@ if __name__ == "__main__":
     year = season_data['year']
     number = season_data['number']
     url = 'https://develop.battle.net/documentation/starcraft-2/game-data-apis'
+    github_url = 'https://github.com/2press/sc2_mmr_ranges_liquipedia'
     title = 'StarCraft 2 Game Data API'
     servers = [Server.Europe, Server.America, Server.Korea]
     with open('liquipedia_ranges.txt', 'w') as o:
         today = date.today().strftime('%B %d, %Y')
         season = f'{year} Season {number}'
+        o.write('<!-- See python script at {github_url} to update the MMR ranges! -->\n')
         o.write('{| class="wikitable" style="text-align:center;"\n')
-        o.write('|-\n')
-        o.write('! rowspan=2 colspan=3 style="width:100px"| League\n')
-        o.write('! colspan=4 style="width:560px" |MMR Floor\n')
-        o.write('|-\n')
         o.write(f'|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" ')
         o.write(f'| League MMR Ranges, 1v1 Ladder, {season}.<ref>{{{{cite web|url={url} |title={title} |accessdate={today}}}}}</ref>\n')
         o.write('|-\n')
+        o.write(f'! rowspan=2 colspan=3 style="width:100px"| League\n')
+        o.write(f'! colspan={len(servers)+1} style="width:560px" |MMR Floor\n')
+        o.write('|-\n')
         for server in servers:
             o.write(f'! style="width:140px" |{server.short().upper()}\n')
-        o.write('|-\n')
         for league in [League.Master, League.Diamond, League.Platinum, League.Gold, League.Silver, League.Bronze]:
-            o.write(f'!rowspan=4| [[File:{league.describe()}-medium.PNG|30px|]]\n')
+            o.write('|-\n')
+            if league == League.Master:
+                png = 'PNG'
+            else:
+                png = 'png'
+            o.write(f'!rowspan=4| [[File:{league.describe()}-medium.{png}|30px|]]\n')
             o.write(f'!rowspan=4| {league.describe()}\n')
             data = []
             for server in servers:
                 data.append(sc2api.get_mmr_ranges(league, seasonId, server))
-            for tier in range(1, 3):
+            for tier in range(1, 4):
                 o.write('|-\n')
                 o.write(f'|{tier} || ')
                 if league == League.Master:
