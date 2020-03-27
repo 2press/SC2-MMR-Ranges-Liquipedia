@@ -7,7 +7,7 @@
 * Install ![Python 3](https://www.python.org/downloads/)
 * Clone or download the source code
 * Install the required packages via pip with `pip install -r requirements.txt`
-* Register an application at <https://develop.battle.net/access/> an generate API credentials
+* Register an application at <https://develop.battle.net/access/> and generate API credentials
 * Create `credentials.py` with the following content using the generated API credentials:
 
 ```python
