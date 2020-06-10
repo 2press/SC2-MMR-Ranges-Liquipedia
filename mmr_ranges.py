@@ -2,6 +2,7 @@ import requests
 import enum
 from datetime import date
 
+
 class League(enum.Enum):
     """StarCraft 2 Leagues."""
     Bronze = 0
@@ -28,6 +29,7 @@ class League(enum.Enum):
 
         return desc
 
+
 class Server(enum.Enum):
     """StarCraft 2 Server."""
     America = 1
@@ -49,34 +51,36 @@ class Server(enum.Enum):
 
         return desc
 
+
 class SC2API:
     """Wrapper for the SC2 api."""
+
     def __init__(self):
         """Init the sc2 api."""
         self.receive_new_access_token()
 
     def receive_new_access_token(self):
-            """Receive a new acces token vai oauth."""
-            from credentials import client_id, secret
-            r = requests.get(
-                'https://eu.battle.net/oauth/token',
-                auth=(client_id, secret),
-                params={'grant_type': 'client_credentials'})
-            r.raise_for_status()
-            self._access_token = r.json().get('access_token')
+        """Receive a new acces token vai oauth."""
+        from credentials import client_id, secret
+        r = requests.get(
+            'https://eu.battle.net/oauth/token',
+            auth=(client_id, secret),
+            params={'grant_type': 'client_credentials'})
+        r.raise_for_status()
+        self._access_token = r.json().get('access_token')
 
     def get_season(self, server: Server):
-            """Collect the current season info."""
-            api_url = ('https://eu.api.blizzard.com/sc2/'
-                    f'ladder/season/{server.id()}')
-            payload = {'locale': 'en_US', 'access_token': self._access_token}
-            r = requests.get(api_url, params=payload)
-            r.raise_for_status()
-            return r.json()
+        """Collect the current season info."""
+        api_url = ('https://eu.api.blizzard.com/sc2/'
+                   f'ladder/season/{server.id()}')
+        payload = {'locale': 'en_US', 'access_token': self._access_token}
+        r = requests.get(api_url, params=payload)
+        r.raise_for_status()
+        return r.json()
 
-    def get_mmr_ranges(self, league: League, seasonId: int , server: Server) -> dict:
-        queueId = 201 # LotV 1v1
-        teamType = 0 # Arragend team
+    def get_mmr_ranges(self, league: League, seasonId: int, server: Server) -> dict:
+        queueId = 201  # LotV 1v1
+        teamType = 0  # Arragend team
         payload = {'locale': 'en_US', 'access_token': self._access_token}
         url = f'https://{server.short()}.api.blizzard.com/data/sc2/league/{seasonId}/{queueId}/{teamType}/{league.value}'
         r = requests.get(url, params=payload)
@@ -85,8 +89,10 @@ class SC2API:
         ranges = dict()
         for tier in data.get('tier'):
             id = int(tier.get('id')) + 1
-            ranges[id] = (int(tier.get('min_rating')), int(tier.get('max_rating')))
+            ranges[id] = (int(tier.get('min_rating')),
+                          int(tier.get('max_rating')))
         return ranges
+
 
 if __name__ == "__main__":
     sc2api = SC2API()
@@ -101,10 +107,13 @@ if __name__ == "__main__":
     with open('liquipedia_ranges.txt', 'w') as o:
         today = date.today().strftime('%B %d, %Y')
         season = f'{year} Season {number}'
-        o.write(f'<!-- See python script at {github_url} to update the MMR ranges! -->\n')
+        o.write(
+            f'<!-- See python script at {github_url} to update the MMR ranges! -->\n')
         o.write('{| class="wikitable" style="text-align:center;"\n')
-        o.write(f'|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" ')
-        o.write(f'| League MMR Ranges, 1v1 Ladder, {season}.<ref>{{{{cite web|url={url} |title={title} |accessdate={today}}}}}</ref>\n')
+        o.write(
+            f'|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" ')
+        o.write(
+            f'| League MMR Ranges, 1v1 Ladder, {season}.<ref>{{{{cite web|url={url} |title={title} |accessdate={today}}}}}</ref>\n')
         o.write('|-\n')
         o.write(f'! rowspan=2 colspan=3 style="width:100px"| League\n')
         o.write(f'! colspan={len(servers)+1} style="width:560px" |MMR Floor\n')
@@ -117,7 +126,8 @@ if __name__ == "__main__":
                 png = 'PNG'
             else:
                 png = 'png'
-            o.write(f'!rowspan=4| [[File:{league.describe()}-medium.{png}|30px|]]\n')
+            o.write(
+                f'!rowspan=4| [[File:{league.describe()}-medium.{png}|30px|]]\n')
             o.write(f'!rowspan=4| {league.describe()}\n')
             data = []
             for server in servers:
@@ -125,9 +135,11 @@ if __name__ == "__main__":
             for tier in range(1, 4):
                 o.write('|-\n')
                 o.write(f'|{tier} || ')
-                if league == League.Master and tier ==1:
-                    o.write(' || '.join([f'{string[tier][0]} - {string[tier][1]}' for string in data]))
+                if league == League.Master and tier == 1:
+                    o.write(' || '.join(
+                        [f'{string[tier][0]} - {string[tier][1]}' for string in data]))
                 else:
-                    o.write(' || '.join([f'{string[tier][0]}' for string in data]))
+                    o.write(' || '.join(
+                        [f'{string[tier][0]}' for string in data]))
                 o.write('\n')
         o.write('|}\n')
