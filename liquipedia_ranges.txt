@@ -1,6 +1,6 @@
 <!-- See python script at https://github.com/2press/SC2-MMR-Ranges-Liquipedia to update the MMR ranges! -->
 {| class="wikitable" style="text-align:center;"
-|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" | League MMR Ranges, 1v1 Ladder, 2020 Season 1.<ref>{{cite web|url=https://develop.battle.net/documentation/starcraft-2/game-data-apis |title=StarCraft 2 Game Data API |accessdate=March 27, 2020}}</ref>
+|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" | League MMR Ranges, 1v1 Ladder, 2020 Season 2.<ref>{{cite web|url=https://develop.battle.net/documentation/starcraft-2/game-data-apis |title=StarCraft 2 Game Data API |accessdate=June 11, 2020}}</ref>
 |-
 ! rowspan=2 colspan=3 style="width:100px"| League
 ! colspan=4 style="width:560px" |MMR Floor
@@ -12,54 +12,54 @@
 !rowspan=4| [[File:Master-medium.PNG|30px|]]
 !rowspan=4| Master
 |-
-|1 || 5157 - 5416 || 4937 - 5186 || 5263 - 5515
+|1 || 4817 - 5046 || 4777 - 5006 || 5267 - 5521
 |-
-|2 || 4899 || 4689 || 5012
+|2 || 4589 || 4549 || 5014
 |-
-|3 || 4640 || 4440 || 4760
+|3 || 4360 || 4320 || 4760
 |-
 !rowspan=4| [[File:Diamond-medium.png|30px|]]
 !rowspan=4| Diamond
 |-
-|1 || 4240 || 4053 || 4360
+|1 || 3973 || 3947 || 4360
 |-
-|2 || 3840 || 3667 || 3960
+|2 || 3587 || 3573 || 3960
 |-
-|3 || 3440 || 3280 || 3560
+|3 || 3200 || 3200 || 3560
 |-
 !rowspan=4| [[File:Platinum-medium.png|30px|]]
 !rowspan=4| Platinum
 |-
-|1 || 3280 || 3133 || 3400
+|1 || 3080 || 3067 || 3400
 |-
-|2 || 3120 || 2987 || 3240
+|2 || 2960 || 2933 || 3240
 |-
-|3 || 2960 || 2840 || 3080
+|3 || 2840 || 2800 || 3080
 |-
 !rowspan=4| [[File:Gold-medium.png|30px|]]
 !rowspan=4| Gold
 |-
-|1 || 2827 || 2720 || 2960
+|1 || 2720 || 2680 || 2960
 |-
-|2 || 2693 || 2600 || 2840
+|2 || 2600 || 2560 || 2840
 |-
-|3 || 2560 || 2480 || 2720
+|3 || 2480 || 2440 || 2720
 |-
 !rowspan=4| [[File:Silver-medium.png|30px|]]
 !rowspan=4| Silver
 |-
-|1 || 2373 || 2307 || 2533
+|1 || 2307 || 2267 || 2520
 |-
-|2 || 2187 || 2133 || 2347
+|2 || 2133 || 2093 || 2320
 |-
-|3 || 2000 || 1960 || 2160
+|3 || 1960 || 1920 || 2120
 |-
 !rowspan=4| [[File:Bronze-medium.png|30px|]]
 !rowspan=4| Bronze
 |-
-|1 || 1741 || 1725 || 1908
+|1 || 1731 || 1691 || 1866
 |-
-|2 || 1483 || 1489 || 1657
+|2 || 1503 || 1463 || 1613
 |-
-|3 || 1224 || 1254 || 1405
+|3 || 1274 || 1234 || 1359
 |}
