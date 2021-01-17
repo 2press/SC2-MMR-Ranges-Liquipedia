@@ -1,4 +1,4 @@
-# Python Script to update the SC2 MMR Ranges in SC2 Liquipedia
+# Python script to update the SC2 MMR Ranges in SC2 Liquipedia
 
 <https://liquipedia.net/starcraft2/Battle.net_Leagues#League_MMR_Ranges>
 
