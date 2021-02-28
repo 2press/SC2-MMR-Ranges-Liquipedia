@@ -62,7 +62,7 @@ class SC2API:
     def receive_new_access_token(self):
         """Receive a new acces token vai oauth."""
         from credentials import client_id, secret
-        r = requests.get(
+        r = requests.post(
             'https://eu.battle.net/oauth/token',
             auth=(client_id, secret),
             params={'grant_type': 'client_credentials'})

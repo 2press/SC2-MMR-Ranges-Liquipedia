@@ -1,6 +1,6 @@
 <!-- See python script at https://github.com/2press/SC2-MMR-Ranges-Liquipedia to update the MMR ranges! -->
 {| class="wikitable" style="text-align:center;"
-|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" | League MMR Ranges, 1v1 Ladder, 2020 Season 3.<ref>{{cite web|url=https://develop.battle.net/documentation/starcraft-2/game-data-apis |title=StarCraft 2 Game Data API |accessdate=December 12, 2020}}</ref>
+|+ align="bottom" style="color: grey; font-weight:normal; font-size: 0.9em;" | League MMR Ranges, 1v1 Ladder, 2021 Season 1.<ref>{{cite web|url=https://develop.battle.net/documentation/starcraft-2/game-data-apis |title=StarCraft 2 Game Data API |accessdate=February 28, 2021}}</ref>
 |-
 ! rowspan=2 colspan=3 style="width:100px"| League
 ! colspan=4 style="width:560px" |MMR Floor
@@ -12,54 +12,54 @@
 !rowspan=4| [[File:Master-medium.PNG|30px|]]
 !rowspan=4| Master
 |-
-|1 || 4823 - 5054 || 4781 - 5012 || 5268 - 5522
+|1 || 5072 - 5329 || 4931 - 5177 || 5222 - 5473
 |-
-|2 || 4591 || 4551 || 5014
+|2 || 4816 || 4686 || 4971
 |-
-|3 || 4360 || 4320 || 4760
+|3 || 4560 || 4440 || 4720
 |-
 !rowspan=4| [[File:Diamond-medium.png|30px|]]
 !rowspan=4| Diamond
 |-
-|1 || 3973 || 3933 || 4347
+|1 || 4133 || 4040 || 4307
 |-
-|2 || 3587 || 3547 || 3933
+|2 || 3707 || 3640 || 3893
 |-
-|3 || 3200 || 3160 || 3520
+|3 || 3280 || 3240 || 3480
 |-
 !rowspan=4| [[File:Platinum-medium.png|30px|]]
 !rowspan=4| Platinum
 |-
-|1 || 3067 || 3027 || 3360
+|1 || 3133 || 3093 || 3333
 |-
-|2 || 2933 || 2893 || 3200
+|2 || 2987 || 2947 || 3187
 |-
-|3 || 2800 || 2760 || 3040
+|3 || 2840 || 2800 || 3040
 |-
 !rowspan=4| [[File:Gold-medium.png|30px|]]
 !rowspan=4| Gold
 |-
-|1 || 2680 || 2640 || 2920
+|1 || 2707 || 2667 || 2907
 |-
-|2 || 2560 || 2520 || 2800
+|2 || 2573 || 2533 || 2773
 |-
-|3 || 2440 || 2400 || 2680
+|3 || 2440 || 2400 || 2640
 |-
 !rowspan=4| [[File:Silver-medium.png|30px|]]
 !rowspan=4| Silver
 |-
-|1 || 2267 || 2213 || 2493
+|1 || 2253 || 2213 || 2453
 |-
-|2 || 2093 || 2027 || 2307
+|2 || 2067 || 2027 || 2267
 |-
-|3 || 1920 || 1840 || 2120
+|3 || 1880 || 1840 || 2080
 |-
 !rowspan=4| [[File:Bronze-medium.png|30px|]]
 !rowspan=4| Bronze
 |-
-|1 || 1689 || 1609 || 1866
+|1 || 1624 || 1594 || 1829
 |-
-|2 || 1457 || 1379 || 1612
+|2 || 1368 || 1349 || 1578
 |-
-|3 || 1226 || 1148 || 1358
+|3 || 1111 || 1103 || 1327
 |}
